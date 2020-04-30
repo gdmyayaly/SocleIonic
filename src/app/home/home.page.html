@@ -14,7 +14,16 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <form [formGroup]="user">
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" formControlName="username" name="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="text" formControlName="password" name="password"></ion-input>
+      </ion-item>
+      <ion-button ion-button type="submit" block (click)="loggin(user.value)">Valider</ion-button>
+    </form>
   </div>
 </ion-content>
